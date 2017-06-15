@@ -7,9 +7,9 @@ function* finishedLoading() {
   yield put(
     NavigationActions.reset({
       index: 0,
-      actions: [NavigationActions.navigate({ routeName: routes.login })],
+      actions: [NavigationActions.navigate({ routeName: routes.home })],
       key: null,
-    })
+    }),
   );
 }
 

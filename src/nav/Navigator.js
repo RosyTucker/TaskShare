@@ -4,12 +4,11 @@ import { connect } from 'react-redux';
 
 import { StackNavigator, addNavigationHelpers } from 'react-navigation';
 
-import LoginPage from '../LoginPage';
-import LoadingPage from '../LoadingPage';
+import HomeContainer from '../home/HomeContainer';
+import LoadingPage from '../login/LoadingPage';
 
 import { colors } from '../style/index';
 import routes from './routes';
-import strings from '../strings';
 
 const globalNavigationOptions = {
   headerMode: 'screen',
@@ -24,11 +23,8 @@ export const AppNavigator = StackNavigator({
     screen: LoadingPage,
     navigationOptions: { header: null },
   },
-  [routes.login]: {
-    screen: LoginPage,
-    navigationOptions: {
-      title: strings.login.navTitle,
-    },
+  [routes.home]: {
+    screen: HomeContainer,
   },
 }, globalNavigationOptions);
 

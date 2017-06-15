@@ -1,5 +1,5 @@
 export default {
-  login: {
-    navTitle: 'Get started',
+  home: {
+    navTitle: 'Your Lists',
   },
 };

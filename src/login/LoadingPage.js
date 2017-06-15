@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { colors } from './style';
+import { colors } from '../style/index';
 
 const styles = StyleSheet.create({
   container: {
@@ -14,6 +14,11 @@ const styles = StyleSheet.create({
 const LoadingPage = () => (
   <View style={styles.container} />
 );
+
+LoadingPage.navigationOptions = {
+  header: null,
+};
+
 
 export default LoadingPage;
 
