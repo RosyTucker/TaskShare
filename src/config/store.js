@@ -28,7 +28,7 @@ const configureStore = (initialState) => {
     ));
 
   store.runSaga = sagaMiddleware.run;
-  persistStore(store, persistenceConfig);
+  persistStore(store, persistenceConfig).purge();
   return store;
 };
 

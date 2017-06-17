@@ -1,6 +1,6 @@
 export default {
   home: {
-    navTitle: 'Your Lists',
+    navBarTitle: 'Your Lists',
   },
   addTaskListModal: {
     navBarTitle: 'Add Task List',

@@ -1,18 +1,14 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import { colors } from '../style/index';
+import { Container, Content, colors } from '../theme';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: colors.primary,
+const styles = {
+  content: {
+    backgroundColor: colors.brandPrimary,
   },
-});
+};
 
 const LoadingPage = () => (
-  <View style={styles.container} />
+  <Container><Content style={styles.content} /></Container>
 );
 
 LoadingPage.navigationOptions = {

@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import navigationReducers from '../nav/navigationReducers';
-import taskListReducers from '../home/taskListReducers';
+import taskListReducers from '../taskLists/taskListReducers';
 
 const reducers = combineReducers({
   ...navigationReducers,
