@@ -6,8 +6,9 @@ import {
   View,
 } from 'react-native';
 
+import AddTaskListModal from './AddTaskListModal';
 import { IconButton } from '../libraryCompononts/index';
-
+import modes from './taskListModes';
 
 import strings from '../strings/index';
 import { colors, icons } from '../style/index';
@@ -30,6 +31,14 @@ class Login extends Component {
   }
 
   render() {
+    const { mode, onCancelAddTaskList } = this.props;
+
+    if (mode === modes.addingTask) {
+      return (
+        <AddTaskListModal onClose={onCancelAddTaskList} />
+      );
+    }
+
     return (
       <View style={styles.container}>
         <Text>
@@ -60,6 +69,8 @@ Login.propTypes = {
     setParams: PropTypes.func.isRequired,
   }).isRequired,
   onAddTaskList: PropTypes.func.isRequired,
+  onCancelAddTaskList: PropTypes.func.isRequired,
+  mode: PropTypes.oneOf(Object.values(modes)).isRequired,
 };
 
 export default Login;

@@ -5,4 +5,8 @@ export default {
     id: 'plus',
     component: MaterialCommunityIcons,
   },
+  close: {
+    id: 'close',
+    component: MaterialCommunityIcons,
+  },
 };
