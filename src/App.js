@@ -13,11 +13,9 @@ import AppWithNav from './nav/Navigator';
 const store = configureStore();
 store.runSaga(sagaRoot);
 
-const theme = { ...platform, ...commonColor };
-
 const App = () => (
   <Provider store={store}>
-    <StyleProvider style={getTheme(theme)}>
+    <StyleProvider style={getTheme(commonColor)}>
       <AppWithNav />
     </StyleProvider>
   </Provider>
