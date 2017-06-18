@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { getTaskList } from '../taskLists/taskListSelectors';
+import { getTaskList } from '../taskListSelectors';
 import TaskListPage from './TaskListPage';
 
 const mapStateToProps = (state, props) => ({

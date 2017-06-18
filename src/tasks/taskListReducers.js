@@ -21,13 +21,20 @@ const getInitialState = () => ({
 
 const taskLists = handleActions({
   [addNewTaskList]: state => (
-    { ...state, mode: modes.addingTask }
+    { ...state, mode: modes.addingTaskList }
   ),
   [cancelAddNewTaskList]: state => (
-    { ...state, mode: modes.none }
+    {
+      ...state,
+      mode: modes.none,
+      partial: getInitialState().partial,
+    }
   ),
   [updatePartialTaskList]: (state, action) => (
-    { ...state, partial: { ...state.partial, ...action.payload } }
+    {
+      ...state,
+      partial: { ...state.partial, ...action.payload }
+    }
   ),
   [createNewTaskListSuccess]: (state, action) => (
     {

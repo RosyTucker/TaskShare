@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import AddTaskListModal from './AddTaskListModal';
-import { Container, Content, Button, Icon, List } from '../theme';
-import modes from './taskListModes';
+import { Container, Content, Button, Icon, List } from '../../theme/index';
+import modes from '../taskListModes';
 import TaskListRow from './TaskListRow';
 
-import strings from '../strings/index';
+import strings from '../../strings/index';
 
 class TaskLists extends Component {
   static navigationOptions = ({ navigation }) => ({
@@ -33,7 +33,7 @@ class TaskLists extends Component {
       onSelectTaskList,
     } = this.props;
 
-    if (mode === modes.addingTask) {
+    if (mode === modes.addingTaskList) {
       return (
         <AddTaskListModal
           onClose={onCancelAddTaskList}

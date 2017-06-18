@@ -1,6 +1,6 @@
 import { fork, all } from 'redux-saga/effects';
 import navigationSagas from '../nav/navigationSagas';
-import tasklistSagas from '../taskLists/taskListSagas';
+import tasklistSagas from '../tasks/taskListSagas';
 
 export default function* sagas() {
   yield all([

@@ -1,4 +1,4 @@
 export default {
   none: 'none',
-  addingTask: 'addingTask',
+  addingTaskList: 'addingTaskList',
 };

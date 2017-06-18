@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import { StackNavigator, addNavigationHelpers } from 'react-navigation';
 import { colors } from '../theme';
 
-import TaskListsContainer from '../taskLists/TaskListsContainer';
-import TaskListContainer from '../taskList/TaskListContainer';
+import TaskListsContainer from '../tasks/TaskListsContainer';
+import TaskListContainer from '../tasks/list/TaskListContainer';
 import LoadingPage from '../login/LoadingPage';
 
 import routes from './routes';

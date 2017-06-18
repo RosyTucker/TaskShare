@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Text, ListItem, Body } from '../theme';
+import { Text, ListItem, Body } from '../../theme/index';
 
 const styles = {
   task: {

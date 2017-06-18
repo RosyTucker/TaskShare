@@ -18,8 +18,8 @@ import {
   Title,
   Icon,
   Text,
-} from '../theme';
-import strings from '../strings';
+} from '../../theme/index';
+import strings from '../../strings/index';
 
 const styles = {
   content: {
@@ -30,7 +30,7 @@ const styles = {
   },
 };
 
-const AddTaskListModal = ({ partialTaskList, onClose, onUpdate, onCreate }) => (
+const AddTaskModal = ({ partialTask, onClose, onUpdate, onCreate }) => (
   <Modal animationType="slide">
     <Container>
       <Header>
@@ -48,12 +48,12 @@ const AddTaskListModal = ({ partialTaskList, onClose, onUpdate, onCreate }) => (
         <Form>
           <Item>
             <Input
-              value={partialTaskList.name}
+              value={partialTask.description}
               onChangeText={name => onUpdate({ name })}
               placeholder={strings.addTaskListModal.taskListNamePlaceholder}
             />
           </Item>
-          <Button primary full style={styles.createButton} onPress={() => onCreate(partialTaskList)}>
+          <Button primary full style={styles.createButton} onPress={() => onCreate(partialTask)}>
             <Text>{strings.addTaskListModal.createTaskListButtonTitle}</Text>
           </Button>
         </Form>
@@ -62,13 +62,13 @@ const AddTaskListModal = ({ partialTaskList, onClose, onUpdate, onCreate }) => (
   </Modal>
 );
 
-AddTaskListModal.propTypes = {
+AddTaskModal.propTypes = {
   onClose: PropTypes.func.isRequired,
   onUpdate: PropTypes.func.isRequired,
   onCreate: PropTypes.func.isRequired,
-  partialTaskList: PropTypes.shape({
-    name: PropTypes.string.isRequired,
+  partialTask: PropTypes.shape({
+    description: PropTypes.string.isRequired,
   }).isRequired,
 };
 
-export default AddTaskListModal;
+export default AddTaskModal;

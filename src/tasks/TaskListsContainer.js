@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import { addNewTaskList, cancelAddNewTaskList, updatePartialTaskList, createNewTaskList } from './taskListActions';
 import { getMode, getPartialTaskList, getExistingTaskLists } from './taskListSelectors';
-import TaskListsPage from './TaskListsPage';
+import TaskListsPage from './allLists/TaskListsPage';
 import routes from '../nav/routes';
 
 const mapStateToProps = state => ({
