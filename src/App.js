@@ -4,7 +4,6 @@ import { Provider } from 'react-redux';
 
 import getTheme from './theme/native-base-theme/components';
 import commonColor from './theme/native-base-theme/variables/commonColor';
-import platform from './theme/native-base-theme/variables/platform';
 import sagaRoot from './config/rootSaga';
 import { configureStore } from './config/store';
 

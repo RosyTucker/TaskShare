@@ -7,6 +7,7 @@ import rootReducer from './rootReducer';
 
 const persistenceConfig = {
   storage: AsyncStorage,
+  blacklist: ['nav'],
 };
 
 const configureStore = (initialState) => {

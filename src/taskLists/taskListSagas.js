@@ -1,12 +1,19 @@
-import { takeEvery } from 'redux-saga/effects';
+import { takeEvery, put } from 'redux-saga/effects';
+import moment from 'moment';
+import { v4 as uuid } from 'uuid';
 
-import { ADD_NEW_TASK_LIST } from './taskListActions';
+import { CREATE_NEW_TASK_LIST, createNewTaskListSuccess } from './taskListActions';
 
-function addNewTaskList() {
+function* createNewTaskList(action) {
+  yield put(createNewTaskListSuccess({
+    ...action.payload,
+    id: uuid(),
+    createdAt: moment(),
+  }));
 }
 
 export function* watchAddTaskList() {
-  yield takeEvery(ADD_NEW_TASK_LIST, addNewTaskList);
+  yield takeEvery(CREATE_NEW_TASK_LIST, createNewTaskList);
 }
 
 export default [

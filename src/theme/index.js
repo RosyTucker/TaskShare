@@ -22,6 +22,7 @@ const Icon = Components.Icon;
 const Item = Components.Item;
 const Label = Components.Label;
 const Left = Components.Left;
+const List = Components.List;
 const ListItem = Components.ListItem;
 const Radio = Components.Radio;
 const Right = Components.Right;
@@ -61,6 +62,7 @@ export {
   Item,
   Label,
   Left,
+  List,
   ListItem,
   Radio,
   Right,

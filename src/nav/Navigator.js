@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import { StackNavigator, addNavigationHelpers } from 'react-navigation';
 import { colors } from '../theme';
 
-import TaskListContainer from '../taskLists/TaskListsContainer';
+import TaskListsContainer from '../taskLists/TaskListsContainer';
+import TaskListContainer from '../taskList/TaskListContainer';
 import LoadingPage from '../login/LoadingPage';
 
 import routes from './routes';
@@ -23,16 +24,17 @@ export const AppNavigator = StackNavigator({
     navigationOptions: { header: null },
   },
   [routes.home]: {
+    screen: TaskListsContainer,
+  },
+  [routes.taskList]: {
     screen: TaskListContainer,
   },
 }, globalNavigationOptions);
 
 
 const AppWithNav = ({ dispatch, nav }) => (
-  <AppNavigator
-    navigation={addNavigationHelpers({ dispatch, state: nav })}
-  />
-  );
+  <AppNavigator navigation={addNavigationHelpers({ dispatch, state: nav })} />
+);
 
 AppWithNav.propTypes = {
   dispatch: PropTypes.func.isRequired,

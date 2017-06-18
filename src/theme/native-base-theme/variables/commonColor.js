@@ -106,6 +106,9 @@ export default {
     return this.iconFontSize * 0.6;
   },
 
+  // Container
+  containerDefaultBg: '#fff',
+
   // Card
   cardDefaultBg: '#fff',
 
@@ -214,8 +217,8 @@ export default {
   // Changed Variable
   listItemPadding: platform === 'ios' ? 10 : 12,
 
-  listNoteColor: '#808080',
-  listNoteSize: 13,
+  listNoteColor: '#a7a7a7',
+  listNoteSize: 12,
 
   // Progress Bar
   defaultProgressColor: '#E4202D',
@@ -246,7 +249,8 @@ export default {
   // Text
   textColor: '#000',
   inverseTextColor: '#fff',
-  noteFontSize: 14,
+  noteFontSize: 12,
+  noteFontColor: '#a7a7a7',
 
   // Title
   titleFontfamily: platform === 'ios' ? 'System' : 'Roboto_medium',

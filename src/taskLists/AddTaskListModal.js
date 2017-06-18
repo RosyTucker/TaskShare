@@ -17,10 +17,11 @@ import {
   Right,
   Title,
   Icon,
+  Text,
 } from '../theme';
 import strings from '../strings';
 
-const AddTaskListModal = ({ onClose }) => (
+const AddTaskListModal = ({ partialTaskList, onClose, onUpdate, onCreate }) => (
   <Modal animationType="slide">
     <Container>
       <Header>
@@ -37,11 +38,15 @@ const AddTaskListModal = ({ onClose }) => (
       <Content>
         <Form>
           <Item>
-            <Input placeholder="Task List Name" />
+            <Input
+              value={partialTaskList.name}
+              onChangeText={name => onUpdate({ name })}
+              placeholder={strings.addTaskListModal.taskListNamePlaceholder}
+            />
           </Item>
-          <Item last>
-            <Input placeholder="Password" />
-          </Item>
+          <Button primary onPress={() => onCreate(partialTaskList)}>
+            <Text>{strings.addTaskListModal.createTaskListButtonTitle}</Text>
+          </Button>
         </Form>
       </Content>
     </Container>
@@ -50,6 +55,11 @@ const AddTaskListModal = ({ onClose }) => (
 
 AddTaskListModal.propTypes = {
   onClose: PropTypes.func.isRequired,
+  onUpdate: PropTypes.func.isRequired,
+  onCreate: PropTypes.func.isRequired,
+  partialTaskList: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default AddTaskListModal;

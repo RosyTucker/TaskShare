@@ -104,6 +104,9 @@ export default {
     return this.iconFontSize * 0.6;
   },
 
+  // Container
+  containerDefaultBg: '#fff',
+
   // Card
   cardDefaultBg: '#fff',
 
@@ -245,6 +248,7 @@ export default {
   textColor: '#000',
   inverseTextColor: '#fff',
   noteFontSize: 14,
+  noteFontColor: '#f8be63',
 
   // Title
   titleFontfamily: platform === 'ios' ? 'Roboto' : 'Roboto_medium',
