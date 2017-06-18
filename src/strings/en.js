@@ -7,4 +7,9 @@ export default {
     taskListNamePlaceholder: 'Task List Name',
     createTaskListButtonTitle: 'Create',
   },
+  addTaskModal: {
+    navBarTitle: 'Add Task',
+    taskDescriptionPlaceholder: 'Description',
+    createTaskButtonTitle: 'Create',
+  },
 };

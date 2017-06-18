@@ -71,7 +71,6 @@ TaskLists.propTypes = {
   onSelectTaskList: PropTypes.func.isRequired,
   partialTaskList: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    createdAt: PropTypes.string.isRequired,
   }).isRequired,
   existingTaskLists: PropTypes.arrayOf(
     PropTypes.shape({

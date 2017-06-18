@@ -1,5 +1,6 @@
 import { handleActions } from 'redux-actions';
-import moment from 'moment';
+import { find, propEq } from 'ramda';
+
 import modes from './taskListModes';
 
 import {
@@ -7,19 +8,27 @@ import {
   cancelAddNewTaskList,
   createNewTaskListSuccess,
   updatePartialTaskList,
+  addNewTask,
+  cancelAddNewTask,
+  updatePartialTask,
+  createNewTaskSuccess,
 } from './taskListActions';
 
 const getInitialState = () => ({
   lists: [],
   mode: modes.none,
-  partial: {
+  partialList: {
     name: '',
-    createdAt: moment(),
     tasks: [],
+  },
+  partialTask: {
+    description: '',
+    isComplete: false,
   },
 });
 
-const taskLists = handleActions({
+
+const allLists = {
   [addNewTaskList]: state => (
     { ...state, mode: modes.addingTaskList }
   ),
@@ -27,13 +36,13 @@ const taskLists = handleActions({
     {
       ...state,
       mode: modes.none,
-      partial: getInitialState().partial,
+      partialList: getInitialState().partialList,
     }
   ),
   [updatePartialTaskList]: (state, action) => (
     {
       ...state,
-      partial: { ...state.partial, ...action.payload }
+      partialList: { ...state.partialList, ...action.payload },
     }
   ),
   [createNewTaskListSuccess]: (state, action) => (
@@ -41,9 +50,43 @@ const taskLists = handleActions({
       ...state,
       lists: [action.payload, ...state.lists],
       mode: modes.none,
-      partial: getInitialState().partial,
+      partialList: getInitialState().partialList,
     }
   ),
+};
+
+const singleList = {
+  [addNewTask]: state => (
+    { ...state, mode: modes.addingTask }
+  ),
+  [cancelAddNewTask]: state => (
+    {
+      ...state,
+      mode: modes.none,
+      partialTask: getInitialState().partialTask,
+    }
+  ),
+  [updatePartialTask]: (state, action) => (
+    {
+      ...state,
+      partialTask: { ...state.partialTask, ...action.payload },
+    }
+  ),
+  [createNewTaskSuccess]: (state, action) => {
+    const taskList = find(propEq('id', action.payload.listId))(state.lists);
+    taskList.tasks = [action.payload.task, ...taskList.tasks];
+    return ({
+      ...state,
+      lists: state.lists,
+      mode: modes.none,
+      partialTask: getInitialState().partialTask,
+    });
+  },
+};
+
+const taskLists = handleActions({
+  ...allLists,
+  ...singleList,
 }, getInitialState());
 
 export default { taskLists };

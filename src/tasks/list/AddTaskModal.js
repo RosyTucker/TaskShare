@@ -40,7 +40,7 @@ const AddTaskModal = ({ partialTask, onClose, onUpdate, onCreate }) => (
           </Button>
         </Left>
         <Body>
-          <Title>{strings.addTaskListModal.navBarTitle}</Title>
+          <Title>{strings.addTaskModal.navBarTitle}</Title>
         </Body>
         <Right />
       </Header>
@@ -49,12 +49,12 @@ const AddTaskModal = ({ partialTask, onClose, onUpdate, onCreate }) => (
           <Item>
             <Input
               value={partialTask.description}
-              onChangeText={name => onUpdate({ name })}
-              placeholder={strings.addTaskListModal.taskListNamePlaceholder}
+              onChangeText={description => onUpdate({ description })}
+              placeholder={strings.addTaskModal.taskDescriptionPlaceholder}
             />
           </Item>
           <Button primary full style={styles.createButton} onPress={() => onCreate(partialTask)}>
-            <Text>{strings.addTaskListModal.createTaskListButtonTitle}</Text>
+            <Text>{strings.addTaskModal.createTaskButtonTitle}</Text>
           </Button>
         </Form>
       </Content>
@@ -68,6 +68,7 @@ AddTaskModal.propTypes = {
   onCreate: PropTypes.func.isRequired,
   partialTask: PropTypes.shape({
     description: PropTypes.string.isRequired,
+    isComplete: PropTypes.bool.isRequired,
   }).isRequired,
 };
 

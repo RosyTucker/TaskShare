@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { Container, Content, List, Text, Button, Icon } from '../../theme/index';
+import { Container, Content, List, Button, Icon } from '../../theme/index';
 import TaskRow from './TaskRow';
 import modes from '../taskListModes';
 import AddTaskModal from './AddTaskModal';
@@ -11,7 +11,7 @@ class TaskListPage extends Component {
     title: navigation.state.params.navBarTitle,
     headerRight: (
       <Button iconRight light transparent onPress={() => navigation.state.params.onAddTask()}>
-        <Icon name="add"/>
+        <Icon name="add" />
       </Button>
     ),
   });
@@ -33,13 +33,13 @@ class TaskListPage extends Component {
       partialTask,
     } = this.props;
 
-    if (mode === modes.addingTaskList) {
+    if (mode === modes.addingTask) {
       return (
         <AddTaskModal
           onClose={onCancelAddTask}
           onUpdate={onUpdatePartialTask}
-          onCreate={onCreateNewTask}
-          partialTaskList={partialTask}
+          onCreate={() => onCreateNewTask(taskList.id, partialTask)}
+          partialTask={partialTask}
         />
       );
     }
@@ -47,7 +47,6 @@ class TaskListPage extends Component {
     return (
       <Container>
         <Content>
-          <Text> Hello </Text>
           <List
             dataArray={taskList.tasks}
             renderRow={task => (
@@ -82,7 +81,7 @@ TaskListPage.propTypes = {
   mode: PropTypes.oneOf(Object.values(modes)).isRequired,
   partialTask: PropTypes.shape({
     description: PropTypes.string.isRequired,
-    createdAt: PropTypes.string.isRequired,
+    icComplete: PropTypes.bool,
   }).isRequired,
 };
 
