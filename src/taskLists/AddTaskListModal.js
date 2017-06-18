@@ -21,6 +21,15 @@ import {
 } from '../theme';
 import strings from '../strings';
 
+const styles = {
+  content: {
+    padding: 20,
+  },
+  createButton: {
+    marginTop: 20,
+  },
+};
+
 const AddTaskListModal = ({ partialTaskList, onClose, onUpdate, onCreate }) => (
   <Modal animationType="slide">
     <Container>
@@ -35,7 +44,7 @@ const AddTaskListModal = ({ partialTaskList, onClose, onUpdate, onCreate }) => (
         </Body>
         <Right />
       </Header>
-      <Content>
+      <Content style={styles.content}>
         <Form>
           <Item>
             <Input
@@ -44,7 +53,7 @@ const AddTaskListModal = ({ partialTaskList, onClose, onUpdate, onCreate }) => (
               placeholder={strings.addTaskListModal.taskListNamePlaceholder}
             />
           </Item>
-          <Button primary onPress={() => onCreate(partialTaskList)}>
+          <Button primary full style={styles.createButton} onPress={() => onCreate(partialTaskList)}>
             <Text>{strings.addTaskListModal.createTaskListButtonTitle}</Text>
           </Button>
         </Form>

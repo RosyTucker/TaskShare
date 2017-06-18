@@ -7,7 +7,8 @@ const deviceWidth = Dimensions.get('window').width;
 const platform = Platform.OS;
 const platformStyle = undefined;
 
-const brandPrimary = '#f14c85';
+const brandPrimary = '#e74c3c';
+const muted = '#d5d5d5';
 
 export default {
   platformStyle,
@@ -25,7 +26,7 @@ export default {
 
   // Button
   btnFontFamily: platform === 'ios' ? 'System' : 'Roboto_medium',
-  btnDisabledBg: '#b5b5b5',
+  btnDisabledBg: muted,
   btnDisabledClr: '#f1f1f1',
 
   // CheckBox
@@ -164,7 +165,7 @@ export default {
   searchBarHeight: platform === 'ios' ? 30 : 40,
   toolbarInverseBg: '#222',
   toolbarTextColor: '#fff',
-  iosStatusbar: 'dark-content',
+  iosStatusbar: 'light',
   toolbarDefaultBorder: brandPrimary,
   get statusBarColor() {
     return color(this.toolbarDefaultBg).darken(0.2).hex();
@@ -186,7 +187,7 @@ export default {
     return this.textColor;
   },
   get inputColorPlaceholder() {
-    return '#575757';
+    return muted;
   },
 
   inputGroupMarginBottom: 10,

@@ -13,7 +13,7 @@ class TaskLists extends Component {
     title: strings.home.navBarTitle,
     headerRight: (
       <Button iconRight light transparent onPress={() => navigation.state.params.onAddTaskList()}>
-        <Icon name="add"/>
+        <Icon name="add" />
       </Button>
     ),
   });
@@ -50,7 +50,7 @@ class TaskLists extends Component {
           <List
             dataArray={existingTaskLists}
             renderRow={list => (
-              <TaskListRow key={list.id} list={list} onSelect={() => onSelectTaskList(list)}/>
+              <TaskListRow key={list.id} list={list} onSelect={() => onSelectTaskList(list)} />
             )}
           />
         </Content>

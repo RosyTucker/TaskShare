@@ -26,7 +26,7 @@ class TaskListPage extends Component {
           <List
             dataArray={taskList.tasks}
             renderRow={task => (
-              <TaskRow key={task.id} task={task}/>
+              <TaskRow key={task.id} task={task} />
             )}
           />
         </Content>
