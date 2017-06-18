@@ -1,14 +1,14 @@
 import { connect } from 'react-redux';
 
 import { addNewTaskList, cancelAddNewTaskList, updatePartialTaskList, createNewTaskList } from './taskListActions';
-import { getMode, getPartialTaskList, getExistingTaskLists } from './taskListSelectors';
+import { getMode, getPartialTaskList, getFormattedExistingTaskLists } from './taskListSelectors';
 import TaskListsPage from './allLists/TaskListsPage';
 import routes from '../nav/routes';
 
 const mapStateToProps = state => ({
   mode: getMode(state),
   partialTaskList: getPartialTaskList(state),
-  existingTaskLists: getExistingTaskLists(state),
+  existingTaskLists: getFormattedExistingTaskLists(state),
 });
 
 const mapActionsToProps = (dispatch, props) => ({

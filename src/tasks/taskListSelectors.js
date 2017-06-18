@@ -11,8 +11,12 @@ export const getMode = state => state.taskLists.mode;
 
 export const getPartialTaskList = state => mapTaskList(state.taskLists.partialList);
 
-export const getExistingTaskLists = state => state.taskLists.lists.map(mapTaskList);
+export const getFormattedExistingTaskLists = state => state.taskLists.lists.map(mapTaskList);
 
-export const getTaskList = (state, id) => mapTaskList(find(propEq('id', id))(state.taskLists.lists));
+export const getExistingTaskLists = state => state.taskLists.lists;
+
+export const getFormattedTaskList = (state, id) => mapTaskList(find(propEq('id', id))(state.taskLists.lists));
+
+export const getTaskList = (state, id) => find(propEq('id', id))(state.taskLists.lists);
 
 export const getPartialTask = state => state.taskLists.partialTask;

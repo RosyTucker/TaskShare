@@ -11,7 +11,7 @@ class TaskListPage extends Component {
     title: navigation.state.params.navBarTitle,
     headerRight: (
       <Button iconRight light transparent onPress={() => navigation.state.params.onAddTask()}>
-        <Icon name="add" />
+        <Icon name="add"/>
       </Button>
     ),
   });
@@ -31,6 +31,7 @@ class TaskListPage extends Component {
       onUpdatePartialTask,
       onCreateNewTask,
       partialTask,
+      onUpdateExistingTask,
     } = this.props;
 
     if (mode === modes.addingTask) {
@@ -50,7 +51,11 @@ class TaskListPage extends Component {
           <List
             dataArray={taskList.tasks}
             renderRow={task => (
-              <TaskRow key={task.id} task={task} />
+              <TaskRow
+                key={task.id}
+                task={task}
+                onToggle={() => onUpdateExistingTask(taskList.id, task.id, { isComplete: !task.isComplete })}
+              />
             )}
           />
         </Content>
@@ -83,6 +88,7 @@ TaskListPage.propTypes = {
     description: PropTypes.string.isRequired,
     icComplete: PropTypes.bool,
   }).isRequired,
+  onUpdateExistingTask: PropTypes.func.isRequired,
 };
 
 export default TaskListPage;

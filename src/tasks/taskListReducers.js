@@ -1,5 +1,5 @@
 import { handleActions } from 'redux-actions';
-import { find, propEq } from 'ramda';
+import { find, propEq, update, findIndex, prepend } from 'ramda';
 
 import modes from './taskListModes';
 
@@ -12,6 +12,7 @@ import {
   cancelAddNewTask,
   updatePartialTask,
   createNewTaskSuccess,
+  updateExistingTaskSuccess,
 } from './taskListActions';
 
 const getInitialState = () => ({
@@ -73,13 +74,19 @@ const singleList = {
     }
   ),
   [createNewTaskSuccess]: (state, action) => {
-    const taskList = find(propEq('id', action.payload.listId))(state.lists);
-    taskList.tasks = [action.payload.task, ...taskList.tasks];
+    const listIndex = findIndex(propEq('id', action.payload.id))(state.lists);
     return ({
       ...state,
-      lists: state.lists,
+      lists: update(listIndex, action.payload)(state.lists),
       mode: modes.none,
       partialTask: getInitialState().partialTask,
+    });
+  },
+  [updateExistingTaskSuccess]: (state, action) => {
+    const listIndex = findIndex(propEq('id', action.payload.id))(state.lists);
+    return ({
+      ...state,
+      lists: update(listIndex, action.payload)(state.lists),
     });
   },
 };

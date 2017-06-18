@@ -21,9 +21,15 @@ export const UPDATE_PARTIAL_TASK = 'UPDATE_PARTIAL_TASK';
 export const CREATE_NEW_TASK = 'CREATE_NEW_TASK';
 export const CREATE_NEW_TASK_SUCCESS = 'CREATE_NEW_TASK_SUCCESS';
 
+export const UPDATE_EXISTING_TASK = 'UPDATE_EXISTING_TASK';
+export const UPDATE_EXISTING_TASK_SUCCESS = 'UPDATE_EXISTING_TASK_SUCCESS';
+
 export const addNewTask = createAction(ADD_NEW_TASK);
 export const cancelAddNewTask = createAction(CANCEL_ADD_NEW_TASK);
 export const updatePartialTask = createAction(UPDATE_PARTIAL_TASK);
+
+export const updateExistingTask = createAction(UPDATE_EXISTING_TASK);
+export const updateExistingTaskSuccess = createAction(UPDATE_EXISTING_TASK_SUCCESS);
 
 export const createNewTask = createAction(CREATE_NEW_TASK);
 export const createNewTaskSuccess = createAction(CREATE_NEW_TASK_SUCCESS);
