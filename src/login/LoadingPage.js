@@ -1,20 +1,15 @@
 import React from 'react';
-import { Container, Content, colors } from '../theme';
+import { Container, BackgroundImage } from '../theme';
 
-const styles = {
-  content: {
-    backgroundColor: colors.brandPrimary,
-  },
-};
+const backgroundImage = require('../../images/landing.png');
 
 const LoadingPage = () => (
-  <Container><Content style={styles.content} /></Container>
+  <Container><BackgroundImage source={backgroundImage} blurRadius={20}/></Container>
 );
 
 LoadingPage.navigationOptions = {
   header: null,
 };
-
 
 export default LoadingPage;
 
