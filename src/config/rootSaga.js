@@ -4,7 +4,7 @@ import tasklistSagas from '../tasks/taskListSagas';
 
 export default function* sagas() {
   yield all([
-    navigationSagas.map(saga => fork(saga)),
-    tasklistSagas.map(saga => fork(saga)),
+    ...navigationSagas.map(saga => fork(saga)),
+    ...tasklistSagas.map(saga => fork(saga)),
   ]);
 }

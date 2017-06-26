@@ -1,4 +1,9 @@
 export default {
+  landing: {
+    registerButtonTitle: 'Join',
+    loginButtonTitle: 'Log in',
+    title: 'Task Share',
+  },
   home: {
     navBarTitle: 'Your Lists',
   },

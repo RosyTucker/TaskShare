@@ -1,5 +1,6 @@
 import * as Components from 'native-base';
 import colors from './native-base-theme/variables/commonColor';
+import BackgroundImage from './BackgroundImage';
 
 const Body = Components.Body;
 const Button = Components.Button;
@@ -38,9 +39,15 @@ const TextArea = Components.TextArea;
 const Title = Components.Title;
 const Toast = Components.Toast;
 const View = Components.View;
+const Grid = Components.Grid;
+const Col = Components.Col;
+const Row = Components.Row;
+const Image = Components.Image;
 
 export {
+  BackgroundImage,
   colors,
+  Col,
   Body,
   Button,
   Card,
@@ -52,6 +59,7 @@ export {
   Footer,
   FooterTab,
   Form,
+  Grid,
   H1,
   H2,
   H3,
@@ -60,12 +68,14 @@ export {
   Input,
   InputGroup,
   Item,
+  Image,
   Label,
   Left,
   List,
   ListItem,
   Radio,
   Right,
+  Row,
   Segment,
   Separator,
   Spinner,

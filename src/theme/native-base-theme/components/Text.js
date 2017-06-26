@@ -2,6 +2,7 @@ import variable from '../variables/platform';
 
 export default (variables = variable) => {
   const textTheme = {
+    backgroundColor: 'transparent',
     fontSize: variables.DefaultFontSize - 1,
     fontFamily: variables.fontFamily,
     color: variables.textColor,

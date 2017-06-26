@@ -4,9 +4,12 @@ import { connect } from 'react-redux';
 import { StackNavigator, addNavigationHelpers } from 'react-navigation';
 import { colors } from '../theme';
 
-import TaskListsContainer from '../tasks/TaskListsContainer';
+import TaskListsContainer from '../tasks/allLists/TaskListsContainer';
 import TaskListContainer from '../tasks/list/TaskListContainer';
 import LoadingPage from '../login/LoadingPage';
+import LandingPageContainer from '../login/LandingPageContainer';
+import LoginPageContainer from '../login/LoginPageContainer';
+import RegisterPageContainer from '../login/RegisterPageContainer';
 
 import routes from './routes';
 
@@ -22,6 +25,15 @@ export const AppNavigator = StackNavigator({
   [routes.loadingPage]: {
     screen: LoadingPage,
     navigationOptions: { header: null },
+  },
+  [routes.landing]: {
+    screen: LandingPageContainer,
+  },
+  [routes.register]: {
+    screen: RegisterPageContainer,
+  },
+  [routes.login]: {
+    screen: LoginPageContainer,
   },
   [routes.home]: {
     screen: TaskListsContainer,

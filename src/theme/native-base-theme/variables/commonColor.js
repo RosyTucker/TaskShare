@@ -7,7 +7,8 @@ const deviceWidth = Dimensions.get('window').width;
 const platform = Platform.OS;
 const platformStyle = undefined;
 
-const brandPrimary = '#e74c3c';
+const brandPrimary = '#E05464';
+const brandSecondary = '#CA6DD8';
 const muted = '#d5d5d5';
 
 export default {

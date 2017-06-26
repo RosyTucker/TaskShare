@@ -41,6 +41,7 @@
     "eslint-plugin-jsx-a11y": "^5.0.1",
     "eslint-plugin-mocha": "^4.10.1",
     "eslint-plugin-react": "^7.0.1",
+    "fastlane": "^0.1.0",
     "jest": "20.0.4",
     "react-test-renderer": "16.0.0-alpha.12"
   },

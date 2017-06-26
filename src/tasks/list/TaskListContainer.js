@@ -11,7 +11,7 @@ const mapStateToProps = (state, props) => ({
   partialTask: getPartialTask(state),
 });
 
-const mapActionsToProps = dispatch => ({
+const mapDispatchToProps = dispatch => ({
   onAddTask: () => dispatch(addNewTask()),
   onCancelAddTask: () => dispatch(cancelAddNewTask()),
   onUpdatePartialTask: fields => dispatch(updatePartialTask(fields)),
@@ -19,4 +19,4 @@ const mapActionsToProps = dispatch => ({
   onCreateNewTask: (listId, task) => dispatch(createNewTask({ listId, task })),
 });
 
-export default connect(mapStateToProps, mapActionsToProps)(TaskListPage);
+export default connect(mapStateToProps, mapDispatchToProps)(TaskListPage);
