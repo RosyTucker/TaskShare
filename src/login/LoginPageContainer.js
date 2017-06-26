@@ -1,12 +1,11 @@
 import { connect } from 'react-redux';
 
 import LoginPage from './LoginPage';
-import routes from '../nav/routes';
 
 const mapStateToProps = () => ({
 });
 
-const mapDispatchToProps = (dispatch, props) => ({
+const mapDispatchToProps = () => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);

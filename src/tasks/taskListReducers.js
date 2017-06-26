@@ -1,5 +1,5 @@
 import { handleActions } from 'redux-actions';
-import { find, propEq, update, findIndex, prepend } from 'ramda';
+import { propEq, update, findIndex } from 'ramda';
 
 import modes from './taskListModes';
 

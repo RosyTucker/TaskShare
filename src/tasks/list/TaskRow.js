@@ -19,9 +19,9 @@ const TaskRow = ({ task, onToggle }) => (
       />
     </Left>
     <Body>
-    <Text style={styles.task}>{task.description}</Text>
+      <Text style={styles.task}>{task.description}</Text>
     </Body>
-    <Right/>
+    <Right />
   </ListItem>
 );
 

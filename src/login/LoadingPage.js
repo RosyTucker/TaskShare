@@ -4,7 +4,7 @@ import { Container, BackgroundImage } from '../theme';
 const backgroundImage = require('../../images/landing.png');
 
 const LoadingPage = () => (
-  <Container><BackgroundImage source={backgroundImage} blurRadius={20}/></Container>
+  <Container><BackgroundImage source={backgroundImage} blurRadius={20} /></Container>
 );
 
 LoadingPage.navigationOptions = {

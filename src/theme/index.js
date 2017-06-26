@@ -44,6 +44,15 @@ const Col = Components.Col;
 const Row = Components.Row;
 const Image = Components.Image;
 
+const transparentHeaderStyle = {
+  position: 'absolute',
+  backgroundColor: 'transparent',
+  zIndex: 100,
+  top: 0,
+  left: 0,
+  right: 0,
+};
+
 export {
   BackgroundImage,
   colors,
@@ -88,4 +97,5 @@ export {
   Title,
   Toast,
   View,
+  transparentHeaderStyle,
 };

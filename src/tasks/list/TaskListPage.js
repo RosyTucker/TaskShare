@@ -11,7 +11,7 @@ class TaskListPage extends Component {
     title: navigation.state.params.navBarTitle,
     headerRight: (
       <Button iconRight light transparent onPress={() => navigation.state.params.onAddTask()}>
-        <Icon name="add"/>
+        <Icon name="add" />
       </Button>
     ),
   });

@@ -7,10 +7,6 @@ import strings from '../strings/index';
 const backgroundImage = require('../../images/landing.png');
 
 const styles = {
-  container: {
-    margin: 0,
-    padding: 0,
-  },
   bottomButton: {
     marginTop: 5,
   },
@@ -39,11 +35,11 @@ class LandingPage extends Component {
     } = this.props;
 
     return (
-      <Container style={styles.container}>
-        <BackgroundImage source={backgroundImage} blurRadius={20}/>
+      <Container>
+        <BackgroundImage source={backgroundImage} blurRadius={20} />
         <Grid style={styles.grid}>
           <Row size={10} style={styles.info}>
-              <H1 light>{strings.landing.title}</H1>
+            <H1 light>{strings.landing.title}</H1>
           </Row>
           <Row size={2}>
             <Col>
@@ -55,7 +51,7 @@ class LandingPage extends Component {
               </Button>
             </Col>
           </Row>
-          <Row size={1}/>
+          <Row size={1} />
         </Grid>
       </Container>
     );

@@ -33,8 +33,8 @@ const TaskListRow = ({ list, onSelect }) => (
       <Text style={styles.totalNumTasks}>{list.tasks.length}</Text>
     </Left>
     <Body>
-    <Text style={styles.task}>{list.name}</Text>
-    <Text note>{list.createdAt}</Text>
+      <Text style={styles.task}>{list.name}</Text>
+      <Text note>{list.createdAt}</Text>
     </Body>
     <Right>
       <Icon name="ios-arrow-forward" />

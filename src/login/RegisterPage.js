@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
-import { Container, Content, Text } from '../theme/index';
+import { Container, BackgroundImage, transparentHeaderStyle } from '../theme/index';
+
+const backgroundImage = require('../../images/landing.png');
 
 class RegisterPage extends Component {
   static navigationOptions = () => ({
+    headerStyle: transparentHeaderStyle,
   });
 
   render() {
     return (
       <Container>
-        <Content>
-          <Text> Register </Text>
-        </Content>
+        <BackgroundImage source={backgroundImage} blurRadius={20} />
       </Container>
     );
   }
