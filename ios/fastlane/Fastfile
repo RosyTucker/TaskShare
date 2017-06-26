@@ -1,0 +1,60 @@
+fastlane_version "2.28.4"
+
+default_platform :ios
+
+app_identifier = 'uk.co.iceroad.taskshare'
+
+output_dir = "./builds/#{Time.now.strftime('%F')}"
+binary_name = "#{app_identifier}-release.ipa"
+dsym_path = "#{output_dir}/#{app_identifier}-release.app.dSYM.zip"
+
+xcodeproj_path = './TaskShare.xcodeproj'
+
+devices_file_path = './fastlane/devices.txt'
+build_number = ENV.fetch('BUILD_NUMBER')
+
+scheme = 'TaskShare'
+
+platform :ios do
+
+  private_lane :appstore_profiles do
+    register_devices(devices_file: devices_file_path)
+    match(type: 'appstore', app_identifier: "#{app_identifier}")
+    match(type: 'adhoc', app_identifier: "#{app_identifier}", force_for_new_devices: true)
+  end
+
+  lane :dev_profiles do
+    register_devices(devices_file: devices_file_path)
+    match(type: 'development', app_identifier: "#{app_identifier}", force_for_new_devices: true)
+  end
+
+  private_lane :build do |options|
+    gym(
+        clean: true,
+        configuration: "Release",
+        output_directory: output_dir,
+        output_name: binary_name,
+        export_method: options[:method],
+        project: xcodeproj_path,
+        scheme: scheme
+    )
+  end
+
+  desc "TestFlight"
+  lane :deploy_testflight do
+    appstore_profiles
+    increment_build_number(build_number: build_number, xcodeproj: xcodeproj_path)
+    ipa = build(method: 'app-store')
+
+    pilot(
+        ipa: ipa,
+        distribute_external: false,
+        beta_app_description: changelog_from_git_commits(pretty: '%h %s', commits_count: 5)
+    )
+    clean_build_artifacts
+  end
+
+  error do |lane, exception|
+    puts "#{lane}: #{exception}"
+  end
+end

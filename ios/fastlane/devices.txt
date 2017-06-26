@@ -1,0 +1,3 @@
+Device ID	Device Name
+94fe2a1c940dff1f59f967ba10a7ff34885f6932	Tom's iPhone
+970a19886bc1bfcf4cea8a0a4e19a61e7938928a	Rose's iPhone
