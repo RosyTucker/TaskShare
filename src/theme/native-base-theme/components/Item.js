@@ -205,7 +205,6 @@ export default (variables = variable) => {
     backgroundColor: 'transparent',
     flexDirection: 'row',
     alignItems: 'center',
-    marginLeft: 2,
   };
 
   return itemTheme;

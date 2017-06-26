@@ -4,6 +4,13 @@ export default {
     loginButtonTitle: 'Log in',
     title: 'Task Share',
   },
+  register: {
+    navBarTitle: 'Register',
+    nameInputPlaceholder: 'Name',
+    emailInputPlaceholder: 'Email',
+    passwordInputPlaceholder: 'Password',
+    registerButtonTitle: 'Let\'s Go!',
+  },
   home: {
     navBarTitle: 'Your Lists',
   },

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import LandingPage from './LandingPage';
-import routes from '../nav/routes';
+import routes from '../../nav/routes';
 
 const mapStateToProps = () => ({
 });

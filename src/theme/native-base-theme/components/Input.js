@@ -9,6 +9,9 @@ export default (variables = variable) => {
     flex: 1,
     fontSize: variables.inputFontSize,
     lineHeight: variables.inputLineHeight,
+    '.light': {
+      color: '#FFF',
+    },
   };
 
   return inputTheme;

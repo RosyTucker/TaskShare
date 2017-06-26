@@ -182,6 +182,8 @@ export default {
   inputFontSize: 17,
   inputBorderColor: '#D9D5DC',
   inputSuccessBorderColor: '#2b8339',
+  inputColorPlaceholderLight: '#e2e2e2',
+  inputSuccessBorderColorLight: '#2b8339',
   inputErrorBorderColor: '#ed2f2f',
 
   get inputColor() {

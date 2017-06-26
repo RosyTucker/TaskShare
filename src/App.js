@@ -20,4 +20,16 @@ const App = () => (
   </Provider>
 );
 
+
+/* eslint-disable no-underscore-dangle */
+global._fetch = fetch;
+global.fetch = (uri, options, ...args) => global._fetch(
+  uri, options, ...args)
+  .then((response) => {
+    if (response.status === 200) return response;
+    console.log('Fetching from', uri, response.status, { request: { uri, options, ...args }, response });
+    return response;
+  });
+/* eslint-enable */
+
 export default App;

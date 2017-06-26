@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import { Container, BackgroundImage, transparentHeaderStyle } from '../theme/index';
+import { Container, BackgroundImage, transparentHeaderStyle } from '../../theme/index';
 
-const backgroundImage = require('../../images/landing.png');
+const backgroundImage = require('../../../images/landing.png');
 
 class LoginPage extends Component {
   static navigationOptions = () => ({

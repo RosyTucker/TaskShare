@@ -1,7 +1,7 @@
 import React from 'react';
-import { Container, BackgroundImage } from '../theme';
+import { Container, BackgroundImage } from '../../theme/index';
 
-const backgroundImage = require('../../images/landing.png');
+const backgroundImage = require('../../../images/landing.png');
 
 const LoadingPage = () => (
   <Container><BackgroundImage source={backgroundImage} blurRadius={20} /></Container>

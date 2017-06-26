@@ -6,10 +6,10 @@ import { colors } from '../theme';
 
 import TaskListsContainer from '../tasks/allLists/TaskListsContainer';
 import TaskListContainer from '../tasks/list/TaskListContainer';
-import LoadingPage from '../login/LoadingPage';
-import LandingPageContainer from '../login/LandingPageContainer';
-import LoginPageContainer from '../login/LoginPageContainer';
-import RegisterPageContainer from '../login/RegisterPageContainer';
+import LoadingPage from '../onboarding/landing/LoadingPage';
+import LandingPageContainer from '../onboarding/landing/LandingPageContainer';
+import LoginPageContainer from '../onboarding/login/LoginPageContainer';
+import RegisterPageContainer from '../onboarding/registration/RegisterPageContainer';
 
 import routes from './routes';
 

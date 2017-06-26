@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Container, Button, Grid, Row, Col, Text, BackgroundImage, H1 } from '../theme/index';
+import { Container, Button, Grid, Row, Col, Text, BackgroundImage, H1 } from '../../theme/index';
 
-import strings from '../strings/index';
+import strings from '../../strings/index';
 
-const backgroundImage = require('../../images/landing.png');
+const backgroundImage = require('../../../images/landing.png');
 
 const styles = {
   bottomButton: {
